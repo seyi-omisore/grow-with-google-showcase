@@ -1,4 +1,4 @@
-```sql
+
 -- ============================================================
 -- Household Energy Efficiency Optimizer — SQL Schema
 -- Team Quantum Alliance
@@ -109,4 +109,4 @@ CREATE TABLE usage_estimates (
 CREATE INDEX idx_household_appliances_household ON household_appliances (household_id);
 CREATE INDEX idx_usage_estimates_household       ON usage_estimates (household_id);
 CREATE INDEX idx_benchmarks_housing_type         ON benchmarks (housing_type);
-```
+
