@@ -1,3 +1,4 @@
+from typing import Optional
 """
 Core energy calculations for the Household Energy Efficiency Optimizer.
 
@@ -99,7 +100,7 @@ def calculate_carbon_footprint(
 def calculate_benchmark_percentage(
     monthly_kwh: float,
     benchmark_kwh_monthly: float
-) -> float | None:
+) -> Optional[float]:
     """
     Calculate household consumption as a percentage of its benchmark.
 
