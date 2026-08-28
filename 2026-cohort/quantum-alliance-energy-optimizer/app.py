@@ -153,7 +153,7 @@ if st.session_state.pending_appliances:
 
     if st.button("Clear All Pending Appliances"):
         st.session_state.pending_appliances = []
-        st.experimental_rerun()
+        st.rerun()
 
 
 # ------------------------------------------------------------
