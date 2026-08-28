@@ -7,13 +7,23 @@
 ## Problem
 Apartment tenants lack clear, actionable metrics to calculate and reduce their personal energy footprint without expensive smart-meter hardware. This tool lets a user enter their housing type and appliances, then get an estimated monthly energy usage, cost, carbon footprint, and personalized recommendations — compared against typical usage for similar households.
 
+## Solution Summary
+
+The Household Energy Efficiency Optimizer is a Streamlit-based application designed to give apartment tenants actionable insight into their household energy consumption without requiring smart-meter hardware or home ownership.
+
+Users enter basic household information and their appliance usage, including appliance type, quantity, wattage, and daily usage hours. The application then estimates monthly electricity consumption, electricity cost, and carbon footprint. It compares the household's estimated consumption against a housing-type benchmark and generates an efficiency score and explainable recommendations.
+
+The application also stores estimates historically, allowing users to track changes in their energy consumption over time.
+
+The solution directly supports **UN Sustainable Development Goal 7 (Affordable and Clean Energy)** by making energy-efficiency information more accessible to renters and helping users identify practical opportunities to reduce unnecessary electricity consumption.
+
 ## How It Works
 
 ```
 User
   │
   ▼
-Input Form (CLI / Streamlit)
+Input Form (Streamlit)
   │
   ▼
 SQLite Database
@@ -51,20 +61,17 @@ Full schema with constraints and design notes: `src/schema.sql`
 
 ## Setup & Usage
 
-Requires Python 3 (no external packages needed for the core pipeline — uses the built-in `sqlite3` module).
+Requires Python 3 and Streamlit.
 
 ```bash
 # 1. Create the database and tables
 python3 setup_db.py
 
-# 2. Load reference data (ENERGY STAR appliances + EIA RECS benchmarks)
+# 2. Load reference data
 python3 load_reference_data.py
 
-# 3. Run the app
-python3 app.py
-```
-
-This walks you through entering your housing type, size, electricity rate, and appliances, then prints your estimated monthly usage, cost, and how you compare to similar households.
+# 3. Launch the Streamlit application
+python3 -m streamlit run app.py
 
 ## Project Structure
 
@@ -93,6 +100,20 @@ No personally identifying information (name, email, address) is collected or sto
 - Appliance wattages and benchmark values are representative estimates, not exact measurements — see reference data files for details.
 - No authentication — this is a local, single-machine MVP, not a multi-user deployment.
 - Carbon emission factors are user/region-configurable but default values are approximate.
+
+## Project Walkthrough
+
+A brief recorded walkthrough of the Household Energy Efficiency Optimizer demonstrates the complete user workflow, including entering household information, adding appliances, generating energy and cost estimates, reviewing recommendations, and saving an estimate for historical tracking.
+
+**[Watch the Household Energy Efficiency Optimizer Walkthrough](https://drive.google.com/file/d/1ncGb0UfTnQR8E_yttgFAxe4jfMpmP4nr/view?usp=drive_link)**
+
+## Project Documentation
+
+The complete research, problem grounding, solution description, implementation plan, resources, risks and mitigations, and MVP limitations are documented in:
+
+**[Project Summary](PROJECT_SUMMARY.md)**
+
+
 
 ## Team
 
