@@ -45,7 +45,7 @@ Dashboard
 - **EIA RECS (Residential Energy Consumption Survey)** — housing-type benchmark averages
 - **User-entered data** — household details and appliance ownership, for personalized estimates
 
-Appliance wattages and benchmark kWh figures used in this MVP are representative reference values, not exact ENERGY STAR/EIA measurements — see `docs/SECURITY_REVIEW.md` and inline code comments for details.
+Appliance wattages and benchmark kWh figures used in this MVP are representative reference values, not exact ENERGY STAR/EIA measurements — see `docs/Security_review.md` and inline code comments for details.
 
 ## Database Schema
 
@@ -87,7 +87,7 @@ src/
   household_analysis.py      — main analysis pipeline, ties calculations together
   recommendations.py         — generates appliance/usage recommendations
 docs/
-  SECURITY_REVIEW.md         — cybersecurity review: input validation, SQL safety,
+  Security_review.md         — cybersecurity review: input validation, SQL safety,
                                 data handling, PII assessment, risks & mitigations
 ```
 
